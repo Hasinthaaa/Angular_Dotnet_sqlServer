@@ -1,8 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { IProduct } from './product.model';
 import { ProductDetailsComponent } from "../product-details/product-details.component";
-import { CartService } from '../cart.service';
+import { CartService } from '../cart/cart.service';
 import { ProductService } from './product.service';
+import { ICart } from '../cart/cart.model';
 
 @Component({
   selector: 'bot-catalog',
@@ -204,8 +205,12 @@ export class CatalogComponent {
     })
   }
 
-  addToCart(product:IProduct){
-    this.cartSvc.add(product)
+  addToCart(cartItem:ICart){
+    cartItem.userId = 1;
+    cartItem.quantity = 1;
+    this.cartSvc.add(cartItem);
+
+
   }
 
 
