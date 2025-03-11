@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.Metadata;
 
 namespace Backend.Data
 {
@@ -10,6 +9,7 @@ namespace Backend.Data
 
                // Define your database tables here
                public DbSet<Models.ProductModel> Product { get; set; }
+               public DbSet<Models.CartModel> Cart {get; set; }
           }
      }
 

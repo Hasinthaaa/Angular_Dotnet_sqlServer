@@ -20,7 +20,6 @@ namespace Backend.Controllers
           [HttpGet]
           public ActionResult<List<ProductModel>> GetProducts()
           {
-               Console.WriteLine("land");
                var products = _productService.GetData();
                return Ok(products);
           }

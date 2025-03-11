@@ -167,3 +167,4 @@ D:\Computer Science\Academic\Subjects\3rd year\project\angular 18 project\api\Ba
 D:\Computer Science\Academic\Subjects\3rd year\project\angular 18 project\api\Backend\obj\Debug\net8.0\Backend.pdb
 D:\Computer Science\Academic\Subjects\3rd year\project\angular 18 project\api\Backend\obj\Debug\net8.0\Backend.genruntimeconfig.cache
 D:\Computer Science\Academic\Subjects\3rd year\project\angular 18 project\api\Backend\obj\Debug\net8.0\ref\Backend.dll
+D:\Computer Science\Academic\Subjects\3rd year\project\angular 18 project\api\Backend\obj\Debug\net8.0\Backend.sourcelink.json

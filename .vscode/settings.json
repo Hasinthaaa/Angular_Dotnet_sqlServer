@@ -1,5 +1,8 @@
 {
      "cSpell.words": [
           "OEHQN"
-     ]
+     ],
+     "Codegeex.CompletionDelay": 0.4,
+     "Codegeex.GenerationPreference": "automatic",
+     "Codegeex.CommitMessageStyle": "ConventionalCommits"
 }

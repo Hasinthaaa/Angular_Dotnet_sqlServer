@@ -15,6 +15,7 @@ builder.Services.AddControllers();
 
 // Register ProductService with DI container
 builder.Services.AddScoped<ProductService>();
+builder.Services.AddScoped<CartService>();
 
 var app = builder.Build();
 
