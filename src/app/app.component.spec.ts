@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { SiteHeaderComponent } from './site-header.component';
+import { SiteHeaderComponent } from './site-header/site-header.component';
 
 describe('SiteHeaderComponent', () => {
   let component: SiteHeaderComponent;

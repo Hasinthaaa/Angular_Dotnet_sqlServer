@@ -1,14 +1,20 @@
 <div class="container">
-     <div class="left">
-       <img class="logo" src="/assets/images/logo.png" alt="Logo" />
-       <a href="src/app/home/home.component.html">Home</a>
-       <a href="">Catalog</a>
-       <div class="cart">
-         <a href="">Cart</a>
-       </div>
-     </div>
-     <div class="right">
-       <a href="">Sign In</a>
-       <a href="" class="cta">Register</a>
-     </div>
-   </div>
+  <div class="left">
+    <img class="logo" src="/assets/images/logo.png" alt="Logo" />
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+    <a routerLink="/catalog" routerLinkActive="active">Catalog</a>
+    <div class="cart">
+      <a routerLink="/cart" routerLinkActive="active">Cart</a>
+      <!-- <a [routerLink]="['user', user.id]">{{user.name}}</a> -->
+    </div>
+  </div>
+  <div class="right" *ngIf="!user">
+    <a routerLink="/sign-in" routerLinkActive="active">Sign In</a>
+    <a routerLink="/sign-up" routerLinkActive="active">Register</a>
+  </div>
+  <div class="right" *ngIf="user">
+    <a class="sign-out" *ngIf="showSignOutMenu">
+    </a>
+    <button (click)="signOut()">Sign Out</button>
+  </div>
+</div>
