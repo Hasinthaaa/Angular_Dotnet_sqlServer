@@ -19,7 +19,7 @@ export class SignUpComponent {
   signUpError:boolean = false;
 
 
- constructor(private userService: UserService, private router: Router) { }
+constructor(private userService: UserService, private router: Router) { }
 
   signUp() {
     this.signUpError = false;

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, map, Observable } from 'rxjs';
 
-import { IUser, IUserCredentials } from './user.model';
+import { IUser, IUserCredentials, IUserSignup } from './user.model';
 
 @Injectable({
   providedIn: 'root',
@@ -27,8 +27,7 @@ export class UserService {
       }));
   }
 
-
-  signUp(userDetails: IUser): Observable<IUser> {
+  signUp(userDetails: IUserSignup): Observable<IUser> {
     return this.http
       .post<IUser>('/api/user/SignUp', userDetails)
       .pipe(map((user: IUser) => {
