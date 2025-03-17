@@ -27,6 +27,16 @@ export class UserService {
       }));
   }
 
+
+  signUp(userDetails: IUser): Observable<IUser> {
+    return this.http
+      .post<IUser>('/api/user/SignUp', userDetails)
+      .pipe(map((user: IUser) => {
+        this.user.next(user);
+        return user;
+      }));
+  }
+
   signOut() {
     this.user.next(null);
   }

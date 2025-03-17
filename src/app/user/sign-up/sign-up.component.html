@@ -1,1 +1,85 @@
-<p>sign-up works!</p>
+<div class="container">
+  <form #signUpForm="ngForm" class="form" (ngSubmit)="signUp()">
+    <img class="logo" src="/assets/images/logo.png" />
+    <div class="sign-up">Sign Up</div>
+    <div class="sub-text">to acquire awesome bots</div>
+
+    <input
+      name="firstName"
+      required
+      #firstName="ngModel"
+      [(ngModel)]="userDetails.firstName"
+      placeholder="First Name"
+      type="text"
+    />
+    <em class="error" *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+      First Name is required
+    </em>
+
+    <input
+      name="lastName"
+      required
+      #lastName="ngModel"
+      [(ngModel)]="userDetails.lastName"
+      placeholder="Last Name"
+      type="text"
+    />
+    <em class="error" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+      Last Name is required
+    </em>
+
+    <input
+      name="email"
+      required
+      #email="ngModel"
+      [(ngModel)]="userDetails.email"
+      placeholder="Email Address"
+      type="text"
+    />
+    <em class="error" *ngIf="email.invalid && (email.dirty || email.touched)">
+      Email is required
+    </em>
+    <em class="error" *ngIf="email.errors?.['email'] && (email.dirty || email.touched)">
+      Must be a valid format
+    </em>
+
+    <input
+      name="password"
+      required
+      #password="ngModel"
+      [(ngModel)]="userDetails.password"
+      placeholder="Password"
+      type="password"
+    />
+    <em class="error" *ngIf="password.invalid && (password.dirty || password.touched)">
+      Password is required
+    </em>
+
+    <input
+      name="confirmPassword"
+      required
+      #confirmPassword="ngModel"
+      [(ngModel)]="userDetails.confirmPassword"
+      placeholder="Confirm Password"
+      type="password"
+    />
+    <em class="error" *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)">
+      Confirm Password is required
+    </em>
+    <em class="error" *ngIf="userDetails.password !== userDetails.confirmPassword && confirmPassword.dirty">
+      Passwords must match
+    </em>
+
+    <div class="buttons">
+      <button type="submit" class="button cta">Sign Up</button>
+    </div>
+
+    <div class="signUpError" *ngIf="signUpError">
+      Sign-Up Failed. Please try again.
+    </div>
+
+    <div class="anchor">
+      Already have an account? <a routerLink="/sign-in">Sign In</a>
+    </div>
+  </form>
+</div>

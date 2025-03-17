@@ -1,0 +1,92 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.form {
+  display: flex;
+  padding: 30px 50px 50px 50px;
+  flex-direction: column;
+  margin-top: 25px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+}
+
+.form input {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.logo {
+  width: 150px;
+  align-self: center;
+  margin-bottom: 15px;
+}
+
+.sign-up {
+  font-size: 30px;
+  align-self: center;
+  color: #555;
+}
+
+.sub-text {
+  font-size: 18px;
+  align-self: center;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.form .buttons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 16px;
+}
+
+.button.cta {
+  /* background-color: #6e4e5f; */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button.cta:hover {
+  background-color: #bd0061;
+}
+
+.anchor {
+  color: #bd0061;
+  text-align: left;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.anchor:hover {
+  text-decoration: underline;
+}
+
+.error {
+  color: white;
+  background-color: #d25ca1;
+  padding: 2px 5px;
+  font-size: 12px;
+  font-style: normal;
+  border-radius: 3px;
+  margin-top: 5px;
+}
+
+input.error {
+  border: 1px solid #d25ca1;
+}
+.signUpError {
+  margin: 25px 0;
+  color: red;
+  font-size: 12px;
+  text-align: center;
+}

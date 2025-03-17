@@ -13,7 +13,11 @@
 }
 
 .form input {
-  margin-top: 25px;
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
 .logo {
@@ -36,10 +40,24 @@
 }
 
 .form .buttons {
-  margin-top: 10px;
-  display: inline-flex;
+  margin-top: 15px;
+  display: flex;
   justify-content: flex-end;
   font-size: 16px;
+}
+
+.button.cta {
+  /* background-color: #6e4e5f; */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button.cta:hover {
+  background-color: #bd0061;
 }
 
 input.error {
@@ -56,6 +74,16 @@ em.error {
 .signInError {
   margin: 25px 0;
   color: red;
-  font-size: 18px;
+  font-size: 12px;
   text-align: center;
+}
+.anchor {
+  color: #bd0061;
+  text-align: left;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.anchor:hover {
+  text-decoration: underline;
 }

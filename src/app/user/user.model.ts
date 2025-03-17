@@ -5,6 +5,10 @@ export interface IUser {
   password?: string;
 }
 
+export interface IUserSignup extends IUser{
+  confirmPassword?: string;
+}
+
 export interface IUserCredentials {
   email: string;
   password: string;
