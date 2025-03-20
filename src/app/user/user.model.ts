@@ -8,6 +8,9 @@ export interface IUser {
 export interface IUserSignup extends IUser{
   confirmPassword?: string;
 }
+export interface LoggedUser extends IUser{
+  token: string;
+}
 
 export interface IUserCredentials {
   email: string;

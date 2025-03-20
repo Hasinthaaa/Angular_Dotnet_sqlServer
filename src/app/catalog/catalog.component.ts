@@ -5,6 +5,8 @@ import { CartService } from '../cart/cart.service';
 import { ProductService } from './product.service';
 import { ICart } from '../cart/cart.model';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from './../auth.service'
+
 
 @Component({
   selector: 'bot-catalog',
@@ -20,7 +22,8 @@ export class CatalogComponent {
     private cartSvc: CartService,
     private productSvc: ProductService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private authService: AuthService
   ) {
 
   }
@@ -36,7 +39,9 @@ export class CatalogComponent {
   }
 
   addToCart(cartItem: ICart) {
-    cartItem.userId = 1;
+    // cartItem.userId = 1;
+    const token = localStorage.getItem('token');
+    cartItem.userId = Number(this.authService.getUserIdFromToken());
     cartItem.quantity = 1;
     this.cartSvc.add(cartItem);
     this.router.navigate(['/cart']);

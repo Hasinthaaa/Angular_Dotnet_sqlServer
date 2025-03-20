@@ -3,6 +3,7 @@ import { IProduct } from '../catalog/product.model';
 import { CartService } from './cart.service';
 import { CommonModule } from '@angular/common';
 import { ICart } from './cart.model';
+import { AuthService } from './../auth.service'
 
 @Component({
   selector: 'app-cart',
@@ -13,13 +14,21 @@ import { ICart } from './cart.model';
 })
 export class CartComponent implements OnInit {
   private cart: ICart[] = [];
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService, private authService: AuthService) { }
 
   ngOnInit() {
-    const userId =1
-    this.cartService.getCartItems(userId).subscribe({
-      next: (cart) => (this.cart = cart),
-    });
+    // const userId =1
+    const token = localStorage.getItem('token');
+    // console.log('token--------------------', token);
+
+      const userId = this.authService.getUserIdFromToken();
+      if (userId){
+      this.cartService.getCartItems((Number(userId))).subscribe({
+        next: (cart) => (this.cart = cart),
+      });
+
+    }
+
   }
 
   get cartItems() {

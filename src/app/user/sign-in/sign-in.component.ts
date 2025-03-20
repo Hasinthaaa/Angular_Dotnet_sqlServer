@@ -1,7 +1,7 @@
-import { UserService } from './../../../../_course-resources/user/user.service';
 import { Component } from '@angular/core';
-import { IUserCredentials } from '../user.model';
+import { IUserCredentials, LoggedUser } from '../user.model'; // Updated import
 import { Router } from '@angular/router';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'bot-sign-in',
@@ -11,17 +11,18 @@ import { Router } from '@angular/router';
 export class SignInComponent {
   credentials: IUserCredentials = { email: '', password: '' };
   signInError: boolean = false;
-  
+
 
   constructor(private userService: UserService, private router: Router) { }
 
   signIn() {
     this.signInError = false;
     this.userService.signIn(this.credentials).subscribe({
-      next: () => this.router.navigate(['/catalog']),
+      next: (user: LoggedUser) => {
+        localStorage.setItem('token', user.token); // Store the token in local storage
+        this.router.navigate(['/catalog']);
+      },
       error: () => (this.signInError = true)
     });
-
   }
-
 }
