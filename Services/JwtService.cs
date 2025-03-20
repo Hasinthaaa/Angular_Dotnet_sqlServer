@@ -7,40 +7,6 @@ using Backend.Models;
 
 namespace Backend.Services
 {
-     // public class JwtService
-     // {
-     //      private readonly IConfiguration _configuration;
-
-     //      public JwtService(IConfiguration configuration)
-     //      {
-     //           _configuration = configuration;
-     //      }
-
-     //      public string GenerateToken(UserModel user)
-     //      {
-     //           var tokenHandler = new JwtSecurityTokenHandler();
-     //           Console.WriteLine($"tokenHandler: {tokenHandler}");
-
-     //           var key = Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]);
-     //           Console.WriteLine($"key: {key}");
-
-     //           var tokenDescriptor = new SecurityTokenDescriptor
-     //           {
-     //                Subject = new ClaimsIdentity(new[]
-     //               {
-     //                new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
-     //                new Claim(ClaimTypes.Email, user.email)
-     //            }),
-     //                Expires = DateTime.UtcNow.AddHours(1),
-     //                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-     //           };
-     //           Console.WriteLine($"tokenDescriptor: {tokenDescriptor}");
-     //           var token = tokenHandler.CreateToken(tokenDescriptor);
-     //           Console.WriteLine($"token: {token}");
-     //           return tokenHandler.WriteToken(token);
-     //      }
-     // }
-
      public class JwtService
      {
           private readonly string _secretKey;
